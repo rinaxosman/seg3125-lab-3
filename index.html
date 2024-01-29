@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G20's groceries</title>
+
+    <style>
+        #bigTitle {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .tabcontent-container {
+            text-align: center;
+            margin: 20px 100px 100px;
+            border-radius: 5px;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bigTitle">
+        Welcome to G20
+    </div>
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    </div>
+
+    <!-- Tab content -->
+    <div class="tabcontent-container">
+        <div id="Client" class="tabcontent">
+            <h3>Client Information</h3>
+            <p>Tell us a bit about you.</p>
+            Choose a Category:
+            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                <option value=""></option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="GlutenFree">Gluten-Free</option>
+                <option value="None">None</option>
+            </select>
+        </div>
+
+        <div id="Products" class="tabcontent">
+            <h3>Groceries</h3>
+            <p>Choose from our selection of fresh and organic products.</p>
+            <div id="displayProduct"></div>
+            <button id="addCart" type="button" class="block" onclick="selectedItems()">Add selected items to cart</button>
+            <div id="cartImage">
+                <img src="styles/cart.png" alt="Shopping Cart">
+            </div>
+        </div>
+
+        <div id="Cart" class="tabcontent">
+            <h3>Your Cart</h3>
+            <p>Here are the items you've selected.</p>
+            <div id="displayCart"></div>
+            <div id="productsImage">
+                <img src="styles/products.png" alt="Shopping Cart">
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <h3>Website by: Group 20</h3>
+    </footer>
+
+    <script src="groceries.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
