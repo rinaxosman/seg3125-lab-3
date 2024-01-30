@@ -1,3 +1,17 @@
+function updatePriceRangeLabel() {
+    var priceRangeValue = document.getElementById("priceRange").value;
+    document.getElementById("priceRangeLabel").textContent = priceRangeValue + "$";
+    applyPriceFilter();
+}
+
+
+function filterProductsByPrice() {
+    var maxPrice = parseFloat(document.getElementById("priceRange").value);
+    var filteredProducts = products.filter(product => product.price <= maxPrice);
+    populateListProductChoices('dietSelect', 'displayProduct', filteredProducts);
+}
+
+
 function openInfo(evt, tabName) {
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -60,7 +74,6 @@ function populateListProductChoices(slct1, slct2) {
         })(productName));
 
         gridItem.appendChild(addButton);
-
         gridContainer.appendChild(gridItem);
     }
 
@@ -83,22 +96,22 @@ function addToCart(productName) {
     updateProductBoxes();
 }
 
-function updateProductBoxes() {
-    var productItems = document.getElementsByClassName("product-item");
+// function updateProductBoxes() {
+//     var productItems = document.getElementsByClassName("product-item");
 
-    for (var i = 0; i < productItems.length; i++) {
-        var productName = productItems[i].querySelector("label").innerText;
-        var existingProduct = cart.find(item => item.name === productName);
+//     for (var i = 0; i < productItems.length; i++) {
+//         var productName = productItems[i].querySelector("label").innerText;
+//         var existingProduct = cart.find(item => item.name === productName);
 
-        if (existingProduct && existingProduct.quantity > 1) {
-            var quantityButton = document.createElement("button");
-            quantityButton.type = "button";
-            quantityButton.className = "quantity-circle";
-            quantityButton.innerHTML = existingProduct.quantity;
-            productItems[i].appendChild(quantityButton);
-        }
-    }
-}
+//         if (existingProduct && existingProduct.quantity > 1) {
+//             var quantityButton = document.createElement("button");
+//             quantityButton.type = "button";
+//             quantityButton.className = "quantity-circle";
+//             quantityButton.innerHTML = existingProduct.quantity;
+//             productItems[i].appendChild(quantityButton);
+//         }
+//     }
+// }
 
 function removeFromCart(productName) {
     var existingProductIndex = cart.findIndex(item => item.name === productName);
@@ -161,20 +174,28 @@ function getTotalPrice(cart) {
     }, 0);
 }
 
-
-
-
 function sortProducts(sortBy) {
+    var maxPrice = parseFloat(document.getElementById("priceRange").value);
+
     if (sortBy === "price") {
         products.sort((a, b) => a.price - b.price);
+        products = products.filter(product => product.price <= maxPrice);
     } else if (sortBy === "name") {
         products.sort((a, b) => a.name.localeCompare(b.name));
     }
+
     populateListProductChoices('dietSelect', 'displayProduct');
 }
-
 
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
+
+function applyPriceFilter() {
+    var maxPrice = parseFloat(document.getElementById("priceRange").value);
+    var filteredProducts = products.filter(product => product.price <= maxPrice);
+    populateListProductChoices('dietSelect', 'displayProduct', filteredProducts);
+}
+
+
 

@@ -19,11 +19,9 @@
 
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-        <!-- <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button> -->
         <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
         <button class="tablinks" onclick="openInfo(event, 'AboutUs')">About Us</button>
         <button class="tablinks" onclick="openInfo(event, 'FAQ')">FAQ</button>
-        <!-- <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button> -->
     </div>
 
 
@@ -50,38 +48,29 @@
         <br><br>
     </div>
 
+    <div id="priceRangeContainer" class="slider-menu">
+        <label for="priceRange">Price Range:</label>
+        <input type="range" id="priceRange" min="1" max="20" step="1" value="20" oninput="updatePriceRangeLabel()">
+        <span id="priceRangeLabel">20$</span>
+        <!-- <button id="applyButton" onclick="applyPriceFilter()">Apply</button> -->
+    </div>
+    
+
 
     <div id="cartMenu" class="cart-menu">
         <h3>Here is your cart.</h3>
         <div id="displayCart"></div>
-            <br><br>
+
     </div>
     
     <!-- Tab content -->
     <div class="tabcontent-container">
 
-        <!-- <div id="Client" class="tabcontent">
-            <h3>Client Information</h3>
-            <p>Tell us a bit about you.</p>
-            Select a Category:
-            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-                <option value=""></option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="GlutenFree">Gluten-Free</option>
-                <option value="None">None</option>
-            </select>
-            <br><br>
-        </div> -->
-
         <div id="Products" class="tabcontent" style="display: block;">
             <h3>Groceries</h3>
             <p>Choose from our selection of fresh and organic products.</p>
+            <br>
             <div id="displayProduct"></div>
-
-            <!-- <button id="addCart" type="button" class="block" onclick="selectedItems()">Add selected items to cart</button> -->
-            <!-- <div id="cartImage">
-                <img src="styles/cart.png" alt="Shopping Cart">
-            </div> -->
             <br><br>
         </div>
 
@@ -96,17 +85,6 @@
             <h3>Coming Soon</h3>
             <p>Page unavailable...</p>
             <br><br>
-        </div>
-
-        <div id="Cart" class="tabcontent">
-            <h3>Your Cart</h3>
-            <p>Here are the items you've selected.</p>
-            <br>
-            <div id="displayCart"></div>
-            <!-- <div id="productsImage">
-                <img src="styles/products.png" alt="Shopping Cart">
-            </div> -->
-            <br>
         </div>
 
         <div id="priceMenu" class="price-menu">
@@ -124,8 +102,8 @@
     <script src="main.js"></script>
     <script>
         window.onload = function () {
-            populateListProductChoices('dietSelect', 'displayProduct');
-        };
+        populateListProductChoices('dietSelect', 'displayProduct');
+    };
     </script>
     
 

@@ -131,8 +131,6 @@ var products = [
 
 products.sort((a, b) => a.price - b.price);
 
-
-
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
