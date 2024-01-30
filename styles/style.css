@@ -13,12 +13,12 @@ html {
 }
 
 #removeButton {
-  background-color: #ff3333;
+  background-color: #e93636;
   color: #ffffff;
   border: none;
-  padding: 5px 10px; 
+  padding: 5px 8px; 
   cursor: pointer; 
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #removeButton:hover {
@@ -62,6 +62,9 @@ html {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 50%;
+  display: block;
+  margin: 50px;
 }
 
 .product-item button:hover {
@@ -214,7 +217,6 @@ html {
   color: rgb(24, 24, 24);
 }
 
-
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -266,10 +268,11 @@ html {
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   outline: none;
+  background-color: #02992fcc;
 }
 
 .tabcontent button:hover {
-  background-color: #66ce85ab;
+  background-color: rgba(10, 77, 30, 0.801);
 }
 
 #dietSelect{
