@@ -14,45 +14,106 @@
         Welcome to G20
     </div>
 
+    <button id="darkModeToggle" onclick="toggleDarkMode()">Dark Mode</button>
+
+
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <!-- <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button> -->
         <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button class="tablinks" onclick="openInfo(event, 'AboutUs')">About Us</button>
+        <button class="tablinks" onclick="openInfo(event, 'FAQ')">FAQ</button>
+        <!-- <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button> -->
     </div>
 
+
+    <div id="clientMenu" class="fixed-menu">
+        <h3>Client</h3>
+        <p>Tell us a bit about you.</p>
+        <br>
+        Select a Category:
+            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="GlutenFree">Gluten-Free</option>
+                <option value="None" selected>None</option>
+            </select>
+            <br><br>
+    </div>
+
+    <div id="sortMenu" class="sort-menu">
+        <h3>Sort the products</h3>
+        Sort by:
+        <select id="sortSelect" name="sortSelect" onchange="sortProducts(this.value)">
+            <option value="price">Price</option>
+            <option value="name">Alphabetical Order</option>
+        </select>
+        <br><br>
+    </div>
+
+
+    <div id="cartMenu" class="cart-menu">
+        <h3>Here is your cart.</h3>
+        <div id="displayCart"></div>
+            <br><br>
+    </div>
+    
     <!-- Tab content -->
     <div class="tabcontent-container">
-        <div id="Client" class="tabcontent">
+
+        <!-- <div id="Client" class="tabcontent">
             <h3>Client Information</h3>
             <p>Tell us a bit about you.</p>
-            Choose a Category:
+            Select a Category:
             <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
                 <option value=""></option>
                 <option value="Vegetarian">Vegetarian</option>
                 <option value="GlutenFree">Gluten-Free</option>
                 <option value="None">None</option>
             </select>
-        </div>
+            <br><br>
+        </div> -->
 
-        <div id="Products" class="tabcontent">
+        <div id="Products" class="tabcontent" style="display: block;">
             <h3>Groceries</h3>
             <p>Choose from our selection of fresh and organic products.</p>
             <div id="displayProduct"></div>
-            <button id="addCart" type="button" class="block" onclick="selectedItems()">Add selected items to cart</button>
-            <div id="cartImage">
+
+            <!-- <button id="addCart" type="button" class="block" onclick="selectedItems()">Add selected items to cart</button> -->
+            <!-- <div id="cartImage">
                 <img src="styles/cart.png" alt="Shopping Cart">
-            </div>
+            </div> -->
+            <br><br>
+        </div>
+
+        <div id="AboutUs" class="tabcontent">
+            <h3>About Us</h3>
+            <p>SEG 3125</p>
+            <p>Group 20</p>
+            <br><br>
+        </div>
+
+        <div id="FAQ" class="tabcontent">
+            <h3>Coming Soon</h3>
+            <p>Page unavailable...</p>
+            <br><br>
         </div>
 
         <div id="Cart" class="tabcontent">
             <h3>Your Cart</h3>
             <p>Here are the items you've selected.</p>
+            <br>
             <div id="displayCart"></div>
-            <div id="productsImage">
+            <!-- <div id="productsImage">
                 <img src="styles/products.png" alt="Shopping Cart">
-            </div>
+            </div> -->
+            <br>
         </div>
+
+        <div id="priceMenu" class="price-menu">
+            <h3>Total Price</h3>
+            <p id="totalPriceDisplay"></p>
+        </div>
+
     </div>
 
     <footer id="footer">
@@ -61,6 +122,12 @@
 
     <script src="groceries.js"></script>
     <script src="main.js"></script>
+    <script>
+        window.onload = function () {
+            populateListProductChoices('dietSelect', 'displayProduct');
+        };
+    </script>
+    
 
 </body>
 

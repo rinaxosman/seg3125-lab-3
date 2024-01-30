@@ -7,25 +7,216 @@ html {
   text-align: center;
   font-size: 36px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-left:350px;
+  margin-right:350px;
+}
+
+#removeButton {
+  background-color: #ff3333;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px; 
+  cursor: pointer; 
+  border-radius: 5px;
+}
+
+#removeButton:hover {
+  background-color: #c22828;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-item .info-container {
+  margin-top: 10px;
+}
+
+.product-item label {
+  font-size: 16px;
+}
+
+.product-item button {
+  padding: 5px 10px;
+  background-color: #63b47e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-item button:hover {
+  background-color: rgb(67, 92, 75);
+}
+
+#sortSelect {
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sort-menu {
+  position: fixed;
+  left: 20px;
+  top: 450px; 
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.cart-menu {
+  position: fixed;
+  right: 20px;
+  /* top: 250px;  */
+  top: 350px; 
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  max-height: 400px; 
+  overflow-y: auto; 
+}
+
+.price-menu {
+  position: fixed;
+  right: 20px;
+  /* top: 700px; */
+  top: 200px; 
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+#totalPriceDisplay {
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+.quantity-circle {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.fixed-menu {
+  position: fixed;
+  left: 20px;
+  top: 200px; 
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
 }
 
 .tabcontent-container {
   text-align: center;
-  margin: 20px 100px 100px;
+  margin: 20px 350px 100px 350px;
   border-radius: 10px;
-  background-color: #fff; 
+  background-color: #ffffff93; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .tabcontent-container {
+  background-color: #ffffff93; 
+}
+
+#darkModeToggle{
+  padding: 5px 10px;
+  background-color: #6da772;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  position: fixed;
+  font-size: 14px;
+
+}
+
+.dark-mode #darkModeToggle{
+  color: #ffffff;
+}
+
+.dark-mode{
+  border: 2px solid #000000;
+  background-color: #222222;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  /* color: #000000;  */
+}
+
+.dark-mode #bigTitle {
+  color: white;
+}
+
+.dark-mode .fixed-menu {
+  background-color: #8f8f8f;
+  color: rgb(24, 24, 24);
+}
+
+.dark-mode .sort-menu {
+  background-color: #8f8f8f;
+  color: rgb(24, 24, 24);
+}
+
+.dark-mode .price-menu {
+  background-color: #8f8f8f;
+  color: rgb(24, 24, 24);
+}
+
+.dark-mode .cart-menu {
+  background-color: #8f8f8f;
+  color: rgb(24, 24, 24);
 }
 
 
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 2px solid #72a057;
+  border: 2px solid #63b47e;
   background-color: #63b47e;
   border-radius: 5px;
-  margin: 20px 100px 100px;
+  margin: 20px 350px 50px 350px;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -38,6 +229,7 @@ html {
   padding: 14px 16px;
   transition: 0.3s;
   font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 }
 
 /* Change background color of buttons on hover */
@@ -49,8 +241,9 @@ html {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #80b993;
+  background-color: #a0d6b2;
   font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
 }
 
 /* Style the tab content */
@@ -103,6 +296,11 @@ body {
     color: rgb(57, 57, 57);
 }
 
+.dark-mode body {
+  background-color: rgb(44, 48, 49);
+  color: rgb(226, 226, 226);
+}
+
 h1 {
     font-size: 60px;
     line-height: 70px;
@@ -147,8 +345,8 @@ a {
     text-decoration: none;
     margin: 0;
     padding: 0;
-    margin-left: 10px;
-    margin-top: 600px;
+    margin-left: 20px;
+    margin-top: 300px;
 }
 
 
