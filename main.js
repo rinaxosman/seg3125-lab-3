@@ -96,22 +96,6 @@ function addToCart(productName) {
     updateProductBoxes();
 }
 
-// function updateProductBoxes() {
-//     var productItems = document.getElementsByClassName("product-item");
-
-//     for (var i = 0; i < productItems.length; i++) {
-//         var productName = productItems[i].querySelector("label").innerText;
-//         var existingProduct = cart.find(item => item.name === productName);
-
-//         if (existingProduct && existingProduct.quantity > 1) {
-//             var quantityButton = document.createElement("button");
-//             quantityButton.type = "button";
-//             quantityButton.className = "quantity-circle";
-//             quantityButton.innerHTML = existingProduct.quantity;
-//             productItems[i].appendChild(quantityButton);
-//         }
-//     }
-// }
 
 function removeFromCart(productName) {
     var existingProductIndex = cart.findIndex(item => item.name === productName);
@@ -190,12 +174,4 @@ function sortProducts(sortBy) {
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
-
-function applyPriceFilter() {
-    var maxPrice = parseFloat(document.getElementById("priceRange").value);
-    var filteredProducts = products.filter(product => product.price <= maxPrice);
-    populateListProductChoices('dietSelect', 'displayProduct', filteredProducts);
-}
-
-
 

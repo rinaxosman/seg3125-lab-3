@@ -50,18 +50,20 @@
 
     <div id="priceRangeContainer" class="slider-menu">
         <label for="priceRange">Price Range:</label>
-        <input type="range" id="priceRange" min="1" max="20" step="1" value="20" oninput="updatePriceRangeLabel()">
+        <input type="range" id="priceRange" min="0" max="20" step="0.5" value="20" oninput="updatePriceRangeLabel(); applyPriceFilter();">
         <span id="priceRangeLabel">20$</span>
-        <!-- <button id="applyButton" onclick="applyPriceFilter()">Apply</button> -->
     </div>
     
-
-
     <div id="cartMenu" class="cart-menu">
         <h3>Here is your cart.</h3>
         <div id="displayCart"></div>
 
     </div>
+
+    <!-- <div id="budgetMenu" class="budget-menu">
+        <h3>Budget Picker</h3>
+        <br><br>
+    </div> -->
     
     <!-- Tab content -->
     <div class="tabcontent-container">

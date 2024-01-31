@@ -150,7 +150,7 @@ html {
 
 .tabcontent-container {
   text-align: center;
-  margin: 20px 350px 100px 350px;
+  margin: 10px 350px 100px 350px;
   border-radius: 10px;
   background-color: #f5f5f5de; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -180,7 +180,7 @@ html {
 }
 
 .dark-mode{
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
   background-color: #222222;
   border-radius: 5px;
   transition: 0.3s;
@@ -189,6 +189,10 @@ html {
 }
 
 .dark-mode #bigTitle {
+  color: white;
+}
+
+.dark-mode #footer {
   color: white;
 }
 
@@ -257,7 +261,6 @@ html {
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
   font-family: 'Poppins', sans-serif;
   color: #000000;
@@ -397,4 +400,15 @@ header {
 
 #priceRange {
   width: 50%;
+}
+
+.budget-menu {
+  position: fixed;
+  left: 20px;
+  top: 740px; 
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
 }
