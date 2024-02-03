@@ -1,132 +1,180 @@
 var products = [
-	{
-		name: "  Broccoli",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 1.99,
-		image: "styles/broccoli.png"
-	},
-	{
-		name: "  Bread",
-		vegetarian: true,
-		glutenFree: false,
-		organic: false,
-		price: 2.35,
-		image: "styles/bread.png"
-	},
-	{
-		name: "  Salmon",
-		vegetarian: false,
-		glutenFree: true,
-		organic: true,
-		price: 10.00,
-		image: "styles/salmon.png"
-	},
-	{
-		name: "  Tomatoes",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 3.50,
-		image: "styles/tomatoes.png"
-	},
-	{
-		name: "  Chicken Drumsticks",
-		vegetarian: false,
-		glutenFree: true,
-		organic: false,
-		price: 8.50,
-		image: "styles/chicken_drumsticks.png"
-	},
-	{
-		name: "  Quinoa",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 5.99,
-		image: "styles/quinoa.png"
-	},
-	{
-		name: "  Milk",
-		vegetarian: false,
-		glutenFree: true,
-		organic: false,
-		price: 2.99,
-		image: "styles/milk.png"
-	},
-	{
-		name: "  Apples",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 1.50,
-		image: "styles/apples.png"
-	},
-	{
-		name: "  Eggs",
-		vegetarian: false,
-		glutenFree: true,
-		organic: false,
-		price: 4.50,
-		image: "styles/eggs.png"
-	},
-	{
-		name: "  Spinach",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 2.75,
-		image: "styles/spinach.png"
-	},
-	{
-		name: " Pasta",
-		vegetarian: true,
-		glutenFree: false,
-		organic: false,
-		price: 3.25,
-		image: "styles/pasta.png"
-	},
-	{
-		name: " Bananas",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 1.75,
-		image: "styles/bananas.png"
-	},
-	{
-		name: " Beef",
-		vegetarian: false,
-		glutenFree: true,
-		organic: false,
-		price: 12.99,
-		image: "styles/beef.png"
-	},
-	{
-		name: "  Potatoes",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 2.25,
-		image: "styles/potatoes.png"
-	},
-	{
-		name: "  Orange Juice",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 4.99,
-		image: "styles/orange_juice.png"
-	},
-	{
-		name: "  Chicken Breasts",
-		vegetarian: false,
-		glutenFree: true,
-		organic: true,
-		price: 8.99,
-		image: "styles/chicken_breasts.png"
-	},
+    {
+        name: "Broccoli",
+        vegetarian: true,
+        glutenFree: true,
+        organic: false,
+        meats: false,
+        dairy: false,
+        fruits: false,
+        price: 1.99,
+        image: "styles/broccoli.png"
+    },
+    {
+        name: "Bread",
+        vegetarian: true,
+        glutenFree: false,
+        organic: false,
+        meats: false,
+        dairy: true,
+        fruits: false,
+        price: 2.35,
+        image: "styles/bread.png"
+    },
+    {
+        name: "Salmon",
+        vegetarian: false,
+        glutenFree: true,
+        organic: true,
+        meats: true,
+        dairy: false,
+        fruits: false,
+        price: 10.00,
+        image: "styles/salmon.png"
+    },
+    {
+        name: "Tomatoes",
+        vegetarian: true,
+        glutenFree: true,
+        organic: true,
+        meats: false,
+        dairy: false,
+        fruits: true,
+        price: 3.50,
+        image: "styles/tomatoes.png"
+    },
+    {
+        name: "Chicken Drumsticks",
+        vegetarian: false,
+        glutenFree: true,
+        organic: false,
+        meats: true,
+        dairy: false,
+        fruits: false,
+        price: 8.50,
+        image: "styles/chicken_drumsticks.png"
+    },
+    {
+        name: "Quinoa",
+        vegetarian: true,
+        glutenFree: true,
+        organic: true,
+        meats: false,
+        dairy: false,
+        fruits: false,
+        price: 5.99,
+        image: "styles/quinoa.png"
+    },
+    {
+        name: "Milk",
+        vegetarian: false,
+        glutenFree: true,
+        organic: false,
+        meats: false,
+        dairy: true,
+        fruits: false,
+        price: 2.99,
+        image: "styles/milk.png"
+    },
+    {
+        name: "Apples",
+        vegetarian: true,
+        glutenFree: true,
+        organic: true,
+        meats: false,
+        dairy: false,
+        fruits: true,
+        price: 1.50,
+        image: "styles/apples.png"
+    },
+    {
+        name: "Eggs",
+        vegetarian: false,
+        glutenFree: true,
+        organic: false,
+        meats: false,
+        dairy: true,
+        fruits: false,
+        price: 4.50,
+        image: "styles/eggs.png"
+    },
+    {
+        name: "Spinach",
+        vegetarian: true,
+        glutenFree: true,
+        organic: true,
+        meats: false,
+        dairy: false,
+        fruits: false,
+        price: 2.75,
+        image: "styles/spinach.png"
+    },
+    {
+        name: "Pasta",
+        vegetarian: true,
+        glutenFree: false,
+        organic: false,
+        meats: false,
+        dairy: false,
+        fruits: false,
+        price: 3.25,
+        image: "styles/pasta.png"
+    },
+    {
+        name: "Bananas",
+        vegetarian: true,
+        glutenFree: true,
+        organic: false,
+        meats: false,
+        dairy: false,
+        fruits: true,
+        price: 1.75,
+        image: "styles/bananas.png"
+    },
+    {
+        name: "Beef",
+        vegetarian: false,
+        glutenFree: true,
+        organic: false,
+        meats: true,
+        dairy: false,
+        fruits: false,
+        price: 12.99,
+        image: "styles/beef.png"
+    },
+    {
+        name: "Potatoes",
+        vegetarian: true,
+        glutenFree: true,
+        organic: false,
+        meats: false,
+        dairy: false,
+        fruits: false,
+        price: 2.25,
+        image: "styles/potatoes.png"
+    },
+    {
+        name: "Orange Juice",
+        vegetarian: true,
+        glutenFree: true,
+        organic: true,
+        meats: false,
+        dairy: true,
+        fruits: false,
+        price: 4.99,
+        image: "styles/orange_juice.png"
+    },
+    {
+        name: "Chicken Breasts",
+        vegetarian: false,
+        glutenFree: true,
+        organic: true,
+        meats: true,
+        dairy: false,
+        fruits: false,
+        price: 8.99,
+        image: "styles/chicken_breasts.png"
+    },
 ];
 
 products.sort((a, b) => a.price - b.price);
@@ -141,6 +189,18 @@ function restrictListProducts(prods, restriction) {
 			product_names.push(prods[i].name);
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "organic") && (prods[i].organic == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "meats") && (prods[i].meats == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "dairy") && (prods[i].dairy == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "fruits") && (prods[i].fruits == true)){
 			product_names.push(prods[i].name);
 		}
 		else if (restriction == "None"){
