@@ -1,15 +1,15 @@
 function updatePriceRangeLabel() {
     var priceRangeValue = document.getElementById("priceRange").value;
     document.getElementById("priceRangeLabel").textContent = priceRangeValue + "$";
-    applyPriceFilter();
+    filterProductsByPrice();
 }
-
 
 function filterProductsByPrice() {
     var maxPrice = parseFloat(document.getElementById("priceRange").value);
     var filteredProducts = products.filter(product => product.price <= maxPrice);
     populateListProductChoices('dietSelect', 'displayProduct', filteredProducts);
 }
+
 
 
 function openInfo(evt, tabName) {
@@ -27,13 +27,13 @@ function openInfo(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-function populateListProductChoices(slct1, slct2) {
+function populateListProductChoices(slct1, slct2, filteredProducts = products) {
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
 
     s2.innerHTML = "";
 
-    var optionArray = restrictListProducts(products, s1.value);
+    var optionArray = restrictListProducts(filteredProducts, s1.value);
 
     var gridContainer = document.createElement("div");
     gridContainer.className = "product-grid";
